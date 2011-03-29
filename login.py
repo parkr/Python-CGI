@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+
+def read_in_file(filename):
+	f = open(filename, "r")
+	return f.read()
+
 try:
 	import traceback, sys, os, cgi
 	from session import Session
@@ -13,25 +18,22 @@ try:
 	usertype = str(form.getvalue("usertype"))
 
 	#print standard header
-	with open('header.html.pyt') as header:
-		print header.read() % ("Login")
+	print read_in_file("header.html.pyt") % ("Login")
 
 	u = Session(username, password, usertype)
 
 	#print bottom of page
-	with open('bottom.html.pyt') as bottom:
-		print bottom.read()
+	print read_in_file('bottom.html.pyt')
         
 except Exception, e:
         print 'Content-type: text/html\n'
         print
-        print '&lt;html&gt;&lt;head&gt;&lt;title&gt;'
+        print '<html><head><title>'
         print str(e)
-        print '&lt;/title&gt;'
-        print '&lt;/head&gt;&lt;body&gt;'
-        print '&lt;h1&gt;TRACEBACK&lt;/h1&gt;'
-        print '&lt;pre&gt;'
+        print '</title>'
+        print '</head><body>'
+        print '<h1>TRACEBACK</h1>'
+        print '<pre>'
         traceback.print_exc()
-        print '&lt;/pre&gt;'
-        print '&lt;/body&gt;&lt;/html&gt;'
-
+        print '</pre>'
+        print '</body></html>'
