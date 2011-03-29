@@ -21,11 +21,14 @@ try:
 	print read_in_file("header.html.pyt") % ("Login")
 
 	u = Session(username, password, usertype)
+	u.html("true")
+	print u
 
 	#print bottom of page
 	print read_in_file('bottom.html.pyt')
         
 except Exception, e:
+	import traceback
         print 'Content-type: text/html\n'
         print
         print '<html><head><title>'
@@ -35,5 +38,6 @@ except Exception, e:
         print '<h1>TRACEBACK</h1>'
         print '<pre>'
         traceback.print_exc()
+	traceback.prunt_stack()
         print '</pre>'
         print '</body></html>'
