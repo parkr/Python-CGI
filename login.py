@@ -13,14 +13,15 @@ class Session:
 		with open("users.usv", "r") as f:
 			counter = 0
 			possible = str(self.username)+str(self.password)+str(self.usertype)+"\n"
-			print possible
 			for line in f:
 				counter += 1
-				print line
 				if possible == line:
-					print "You should be logged in"
 					self.logged_in = 1
-			print 'file read (', counter, "lines )"
+			print '(', counter, "entries )"
+			if self.logged_in:
+				print "You have been logged in!"
+			else:
+				print "You have not been logged in."
 
 
 	def is_logged_in(self):
