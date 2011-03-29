@@ -4,8 +4,9 @@ try:
 	# The following makes errors go to HTTP client's browser
 	# instead of the server logs.
 	sys.stderr = sys.stdout
-	from session import Session
-
+	
+        from session import Session
+        print 'Content-type: text/html\n'
 	form = cgi.FieldStorage()
 	username = str(form.getvalue("username"))
 	password = str(form.getvalue("password"))
