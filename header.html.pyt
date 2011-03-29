@@ -1,5 +1,6 @@
 <html>
-	<head>
+<head>
 	<title>%s</title>
-	</head>
+</head>
+
 <body>
