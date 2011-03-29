@@ -3,3 +3,4 @@
 *.a
 *.cgi
 *.html
+*.pyc
