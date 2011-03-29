@@ -16,7 +16,7 @@ class Session:
 					counter += 1
 					if possible == line:
 						self.logged_in = 1
-				print '(', counter, "entries )"
+				print '(', counter, "entries in the database )"
 			if self.logged_in:
 				print "You have been logged in!"
 			else:
