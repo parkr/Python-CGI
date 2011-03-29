@@ -1,6 +1,6 @@
-## My McGill python file ##
+## My McGill Python Files ##
 
-### the extension .usv stands for "un-separated values". It is used by the Session module in login.py ###
+### the extension *.usv* stands for "un-separated values". It is used by the *Session* module in *login.py* ###
 
 #### Usage: ####
 	import login
