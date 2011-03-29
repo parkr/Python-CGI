@@ -22,6 +22,7 @@ try:
 
 	u = Session(username, password, usertype)
 	u.html("true")
+	print u.login_message()
 	print u
 
 	#print bottom of page
