@@ -1,7 +1,5 @@
 #! /usr/bin/python
 
-import cgi
-
 class Session:
 
 	def __init__(self, username=None, password=None, usertype=None):
@@ -10,10 +8,8 @@ class Session:
 			self.password = password
 			self.usertype = usertype
 		else:
-			form = cgi.FieldStorage()
-			self.username = str(form.getvalue("username"))
-			self.password = str(form.getvalue("password"))
-			self.usertype = str(form.getvalue("usertype"))
+			print "Error: not enough arguments"
+			break
 		self.logged_in = 0
 		# load file
 		with open("users.usv", "r") as f:
