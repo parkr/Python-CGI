@@ -2,7 +2,7 @@
 
 class Session:
 
-	def __init__(self, username=None, password=None, usertype=None):
+	def __init__(self, username=None, password=None, usertype="user"):
 		if username != None and password != None and usertype != None:
 			self._username = username
 			self._password = password
