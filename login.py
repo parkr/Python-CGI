@@ -15,12 +15,11 @@ try:
 	form = cgi.FieldStorage()
 	username = str(form.getvalue("username"))
 	password = str(form.getvalue("password"))
-	usertype = str(form.getvalue("usertype"))
 
 	#print standard header
 	print read_in_file("header.html.pyt") % ("Login")
 
-	u = Session(username, password, usertype)
+	u = Session(username, password)
 	u.html("true")
 	print u.login_message()
 	print u
