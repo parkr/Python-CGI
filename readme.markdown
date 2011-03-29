@@ -4,10 +4,10 @@
 
 #### Usage: ####
 	import session
-	s = session.Session(username, password, usertype)
+	s = session.Session(username, password)
 	s.is_logged_in() #returns 0 if not logged in and 1 if the user was successfully logged in.
 
 or
 	from session import Session
-	s = Session(username, password, usertype)
+	s = Session(username, password)
 	s.is_logged_in()
