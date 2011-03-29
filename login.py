@@ -26,3 +26,11 @@ class Session:
 	def is_logged_in(self):
 		return self.logged_in
 
+	def get_usertype(self):
+		return self.usertype
+
+	def get_username(self):
+		return self.username
+
+	def __str__(self):
+		return "[username='"+self.username+"', password='"+self.password+"', usertype='"+self.usertype+"']"
