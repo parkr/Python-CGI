@@ -4,10 +4,16 @@ import cgi
 
 class Session:
 
-	def __init__(self, username, password, usertype):
-		self.username = username
-		self.password = password
-		self.usertype = usertype
+	def __init__(self, username=None, password=None, usertype=None):
+		if username != None and password != None and usertype != None:
+			self.username = username
+			self.password = password
+			self.usertype = usertype
+		else:
+			form = cgi.FieldStorage()
+			self.username = str(form.getvalue("username"))
+			self.password = str(form.getvalue("password"))
+			self.usertype = str(form.getvalue("usertype"))
 		self.logged_in = 0
 		# load file
 		with open("users.usv", "r") as f:
