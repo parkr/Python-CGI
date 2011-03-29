@@ -7,23 +7,22 @@ class Session:
 			self.username = username
 			self.password = password
 			self.usertype = usertype
-		else:
-			print "Error: not enough arguments"
-			break
-		self.logged_in = 0
-		# load file
-		with open("users.usv", "r") as f:
-			counter = 0
-			possible = str(self.username)+str(self.password)+str(self.usertype)+"\n"
-			for line in f:
-				counter += 1
-				if possible == line:
-					self.logged_in = 1
-			print '(', counter, "entries )"
+			self.logged_in = 0
+			# load file
+			with open("users.usv", "r") as f:
+				counter = 0
+				possible = str(self.username)+str(self.password)+str(self.usertype)+"\n"
+				for line in f:
+					counter += 1
+					if possible == line:
+						self.logged_in = 1
+				print '(', counter, "entries )"
 			if self.logged_in:
 				print "You have been logged in!"
 			else:
 				print "You have not been logged in."
+		else:
+			print "Error: wrong arguments"
 
 
 	def is_logged_in(self):
