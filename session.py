@@ -24,6 +24,7 @@ class Session:
 			self.login_message += str(num_entries)
 		else:
 			self.login_message = str("Error: wrong arguments")
+		self.html = "false"
 
 	def login_message(self):
 		if self.html == "true":
