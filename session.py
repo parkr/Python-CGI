@@ -6,16 +6,22 @@ class Session:
 		if username != None and password != None:
 			self._username = username
 			self._password = password
-			self._usertype = usertype
+			self._admin = 0
 			self._logged_in = 0
 			# load file
 			f = open("users.usv", "r")
 			counter = 0
-			possible = str(self._username)+str(self._password)+str(self._usertype)+"\n"
+			possible_a = str(self._username)+str(self._password)+str("sysop\n")
+			possible_u = str(self._username)+str(self._password)+str("user\n")
 			for line in f.readlines():
 				counter += 1
-				if possible == line:
+				if possible_a == line:
 					self._logged_in = 1
+					self._admin = 1
+					self._usertype = str("sysop")
+				elif possible_u == line:
+					self._logged_in = 1
+					self._usertype = str("user")
 			if self._logged_in:
 				self._login_message = str("You have been logged in!\n")
 			else:
